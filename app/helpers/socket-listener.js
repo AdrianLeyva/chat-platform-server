@@ -38,18 +38,10 @@ module.exports = {
 
       //Return online users
       socket.on('get-online-users', function (data) {
-          /*var nicknames = [];
-          var sockets = io.in(data.room);
-
-          Object.keys(sockets.sockets).forEach(function (item){
-              nicknames.push(
-                  hashMap.getUserName(sockets.sockets[item].id)
-              );
+          io.sockets.adapter.clients([data.room], function(err, clients){
+              io.to(data.room).emit('get-online-users', clients);
+              console.log("total clients in room1: %d", clients.length);
           });
-
-
-          io.to(data.room).emit('get-online-users', nicknames);
-          console.log("TODO: Item:", sockets.sockets[item].id)*/
       });
   }
 };
