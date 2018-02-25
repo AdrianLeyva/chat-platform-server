@@ -2,6 +2,7 @@
  * Created by adrianaldairleyvasanchez on 2/22/18.
  */
 'use strict';
+const config = require('../configuration/global-configuration');
 
 module.exports = {
   activateListeners: function (io, socket, hashMap) {
@@ -42,6 +43,12 @@ module.exports = {
               io.to(data.room).emit('get-online-users', clients);
               console.log("total clients in room1: %d", clients.length);
           });
+      });
+
+      //SUPPORT client has joined
+      socket.on('support-join', function (token) {
+          if(token == config.SUPPORT_CLIENT.ID)
+              io.emit('success-validation');
       });
   }
 };
