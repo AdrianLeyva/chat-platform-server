@@ -22,4 +22,5 @@ io.on('connection', function(socket) {
 // Running the server.
 http.listen(port, function(){
     console.log('listening on *:' + port);
+    require('./app/support-client/connection')();
 });
