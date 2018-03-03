@@ -16,9 +16,5 @@ module.exports = {
 
     getAllRooms: function (socket) {
         return socket.rooms;
-    },
-
-    getAllRoomNames: function (socket) {
-
     }
 };

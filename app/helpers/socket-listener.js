@@ -51,6 +51,11 @@ module.exports = {
           });
       });
 
+      //Return all active rooms
+      socket.on('get-all-rooms', function () {
+          return socketHandler.getAllRooms(socket);
+      });
+
       //SUPPORT client has joined
       socket.on('support-client-join', function (token) {
           if(token == config.SUPPORT_CLIENT.ID){
