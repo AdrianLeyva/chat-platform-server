@@ -3,18 +3,22 @@
  */
 'use strict';
 
-module.exports = {
-    getClients: function (io) {
-        return io.sockets.clients();
-    },
+function SocketHandler(io) {
+    this.io = io;
+}
 
-    getClientsOfRoom: function (io, room, callback) {
-        io.sockets.adapter.clients([room], function(err, clients){
-           callback(clients);
-        });
-    },
-
-    getAllRooms: function (socket) {
-        return socket.rooms;
-    }
+SocketHandler.prototype.getClients = function () {
+    return this.io.sockets.clients();
 };
+
+SocketHandler.prototype.getClientsOfRoom = function (room, callback) {
+    this.io.sockets.adapter.clients([room], function(err, clients){
+        callback(clients);
+    });
+};
+
+SocketHandler.prototype.getAllRooms = function (socket) {
+    return socket.rooms;
+};
+
+module.exports = SocketHandler;

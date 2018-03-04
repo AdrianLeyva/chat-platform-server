@@ -2,8 +2,8 @@
  * Created by adrianaldairleyvasanchez on 2/24/18.
  */
 'use strict';
-const config = require('../configuration/global-configuration');
-var ClientHashMap = require('../helpers/clientHashMap');
+const config = require('../../configuration/global-configuration');
+var ClientHashMap = require('../../helpers/clientHashMap');
 var hashMap = new ClientHashMap();
 
 module.exports = {
