@@ -8,8 +8,15 @@ module.exports = {
         NAME: 'Chat platform'
     },
     SERVER: {
-        HOST: 'localhost',
-        PORT: '8120'
+        MOCK:{
+            HOST: 'localhost',
+            PORT: '8120'
+        },
+        PROD:{
+            HOST: 'https://chat-platform.herokuapp.com/',
+            PORT: '8120'
+        }
+
     },
     SUPPORT_CLIENT: {
         NAME: 'Usuario de soporte',

@@ -9,14 +9,14 @@ var hashMap = new ClientHashMap();
 var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
-var port = process.env.PORT || config.SERVER.PORT;
+var port = process.env.PORT || config.SERVER.PROD.PORT;
 
 
 // Running the server.
 http.listen(port, function(){
     console.log('listening on *:' + port);
     //Initialize socket connection.
-    require('./app/listeners/connection/connection')(io, hashMap);
+    require('./app/listeners/connection/connection')(io, hashMap, app);
     //Initialize support client.
     require('./app/support-client/listeners/connection')();
 });

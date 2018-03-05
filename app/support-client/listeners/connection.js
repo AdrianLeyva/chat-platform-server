@@ -4,8 +4,8 @@
 'use strict';
 //Modules
 const config = require('../../configuration/global-configuration');
-const PORT = process.env.PORT || config.SERVER.PORT;
-var socket = require('socket.io-client')('http://' + config.SERVER.HOST + ':' + PORT);
+const PORT = process.env.PORT || config.SERVER.PROD.PORT;
+var socket = require('socket.io-client')('http://' + config.SERVER.PROD.HOST + ':' + PORT);
 var listeners = require('./listeners');
 
 module.exports = function () {
