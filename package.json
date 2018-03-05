@@ -1,0 +1,21 @@
+{
+  "name": "angular-chat-platform-server",
+  "version": "1.0.0",
+  "description": "Server side implementation for Chat platform.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdrianLeyva/chat-platform-server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AdrianLeyva/chat-platform-server/issues"
+  },
+  "homepage": "https://github.com/AdrianLeyva/chat-platform-server#readme"
+}
