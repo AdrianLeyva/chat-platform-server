@@ -13,6 +13,7 @@ SocketHandler.prototype.getClients = function () {
 
 SocketHandler.prototype.getClientsOfRoom = function (room, callback) {
     this.io.sockets.adapter.clients([room], function(err, clients){
+        console.log(clients);
         callback(clients);
     });
 };

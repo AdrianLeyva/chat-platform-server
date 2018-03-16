@@ -5,13 +5,14 @@
 const booter = require('../../helpers/booter');
 const SocketHandler = require('../../helpers/socket-handler');
 
-module.exports = function (io, hashMap, app) {
+module.exports = function (io, hashMap, roomHashMap, app) {
     /*
      Client and Server sockets are connected.
      Initialize all event listeners.
      */
     io.on('connection', function(socket) {
+        console.log('user connected');
         let socketHandler = new SocketHandler(io);
-        booter(io, socket, hashMap, socketHandler, app);
+        booter(io, socket, hashMap, roomHashMap, socketHandler, app);
     });
 };
