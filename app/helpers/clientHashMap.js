@@ -11,6 +11,10 @@ ClientHashMap.prototype.getUserName = function (socketID) {
     return this.map[socketID];
 };
 
+ClientHashMap.prototype.getAllUsers = function () {
+    return this.map;
+};
+
 ClientHashMap.prototype.addUserName = function (nickName, socketID) {
     this.map[socketID] = nickName;
 };

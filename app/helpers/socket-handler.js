@@ -7,8 +7,25 @@ function SocketHandler(io) {
     this.io = io;
 }
 
-SocketHandler.prototype.getClients = function () {
-    return this.io.sockets.clients();
+SocketHandler.prototype.getClients = function (hashMap, callback) {
+    var each = require('sync-each');
+    let sockets = this.io.sockets.sockets;
+    let clients = [];
+    var counter = 0;
+
+
+
+    for(let socketID in sockets){
+        if(counter == sockets.length)
+            callback(clients);
+
+        console.log("SOCKETID: " + socketID);
+        clients.push(hashMap.getUserName(socketID));
+        counter++;
+        if(counter == sockets.length)
+            callback(clients);
+        console.log(JSON.stringify(clients));
+    }
 };
 
 SocketHandler.prototype.getClientsOfRoom = function (room, callback) {

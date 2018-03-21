@@ -11,7 +11,7 @@ var roomHashMap = new RoomHashMap();
 var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
-var port = process.env.PORT || config.SERVER.PROD.PORT;
+var port = process.env.PORT || config.SERVER.MOCK.PORT;
 
 
 // Running the server.
@@ -22,3 +22,5 @@ http.listen(port, function(){
     //Initialize support client.
     require('./app/support-client/listeners/connection')();
 });
+
+

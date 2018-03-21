@@ -22,11 +22,12 @@ module.exports = function (io, socket, hashMap, roomHashMap, socketHandler, app)
     require('../listeners/rooms/get-all-rooms')(io, socket, socketHandler, hashMap, roomHashMap);
     require('../listeners/rooms/join-to-room')(socket);
 
-
-
     /*
      * ENDPOINTS
-     */
-    require('../routes/root')(app);
+    */
+    //require('../routes/root')(app);
+    //require('../routes/get-active-users')(app, socketHandler, hashMap);
+
+
 
 };
